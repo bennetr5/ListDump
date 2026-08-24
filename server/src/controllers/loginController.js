@@ -1,5 +1,11 @@
 export function login(req, res) {
-    console.log(req.body)
+    console.log(req.body.username)
+    console.log(req.body.password)
 
-    res.sendStatus(200);
+    if (req.body.username === 'admin' && req.body.password === '1234') {
+        res.json({ success: true })
+    }
+    else {
+        res.json({success: false})
+    }
 }
